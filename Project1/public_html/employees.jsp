@@ -20,9 +20,7 @@
            else
             rset=empsbean.getAllEmployees();
          %>
-    </body>
-</html>
-<table>
+         <table>
     <tr>
         <th>
             First Name
@@ -42,6 +40,9 @@
         <th>
             Salary
         </th>
+        <th>
+            &nbsp;
+        </th>
     </tr><%while(rset.next()){
 out.println("<tr>");
 out.println("<td>" +
@@ -50,6 +51,8 @@ out.println("<td>" +
     rset.getString("email") + "</td><td> " +
     rset.getString("job_id") + "</td><td> " +
     rset.getString("phone_number") + "</td><td> "+
-    rset.getDouble("Salary")+"</td>");
+    rset.getDouble("Salary")+"</td><td> <a href=\"edit.jsp?empid=" + rset.getInt(1) +"\">Edit</a></td>");
 out.println("</tr>");}%>
 </table>
+    </body>
+</html>
